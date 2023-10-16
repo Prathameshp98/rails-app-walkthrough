@@ -9,7 +9,6 @@ class ArticlesController < ApplicationController
     end
 
     def new
-        byebug
         @article = Article.new
     end
 
