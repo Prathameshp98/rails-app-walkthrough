@@ -1,17 +1,21 @@
 Rails.application.routes.draw do
-  
-  # resources :articles
 
   get '/articles', to: 'articles#index'
 
   get '/new_article', to: 'articles#new'
 
-  get '/article/:id', to: 'articles#show'
+  post '/articles', to: 'articles#create'
 
-  patch '/edit_article', to: 'articles#edit'
+  get '/article/:id', to: 'articles#show', as: 'article'
+
+  get '/edit_article/:id', to: 'articles#edit', as: 'edit_article'
+
+  patch '/article/:id', to: 'articles#update'
+
+  get '/delete_article/:id', to: 'articles#destroy',  as: 'delete_article'
+
+  delete '/delete_article/:id', to: 'articles#destroy'
 
   root 'welcome#index'
-
-# http://127.0.0.1:3000/new_article_one
 
 end
